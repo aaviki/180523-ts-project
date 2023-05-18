@@ -8,5 +8,10 @@ export function Todos() {
     .then((result) => setTodos(result))
     .catch((error) => console.log(error))
     .finally(() => console.log("Done"));
-  return <div>fgsdfgsg</div>;
+  return (
+    <div>
+      <h1>Todos here</h1>
+      {todos.length > 0 && todos.map((el) => <div>{el["title"]}</div>)}
+    </div>
+  );
 }
