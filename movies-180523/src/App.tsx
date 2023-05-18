@@ -8,7 +8,7 @@ import { Counter } from "./components/counter/Counter";
 function App() {
   return (
     <div className="App">
-      {/* <Movies /> */}
+      <Movies />
       {/* <Timer /> */}
       <Counter />
     </div>
