@@ -18,7 +18,7 @@ export function Todos() {
 
   return (
     <div>
-      <h1>Todos here</h1>
+      <h1 style={{ backgroundColor: "red" }}>Todos here</h1>
       {isLoading && <p>Loading...</p>}
       {/* {todos.length > 0 && todos.map((el) =>  <div>{el["title"]}</div>)} */}
       {/* {todos.length > 0 && todos.map((el) => <Todo todo={el} key={el["id"]} />)} */}

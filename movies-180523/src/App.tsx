@@ -9,10 +9,10 @@ import { Todos } from "./todos/Todos";
 function App() {
   return (
     <div className="App">
-      {/* <Movies /> */}
+      <Movies />
       {/* <Timer /> */}
       {/* <Counter /> */}
-      <Todos />
+      {/* <Todos /> */}
     </div>
   );
 }
