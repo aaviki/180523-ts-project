@@ -1,17 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Todo } from "../todo/Todo";
 
 export function Todos() {
   const [todos, setTodos] = useState([]);
-  fetch("https://jsonplaceholder.typicode.com/todos")
-    .then((response) => response.json())
-    .then((result) => setTodos(result))
-    .catch((error) => console.log(error))
-    .finally(() => console.log("Done"));
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((result) => setTodos(result))
+      .catch((error) => console.log(error))
+      .finally(() => {
+        console.log("Done");
+        setIsLoading(false);
+      });
+  }, []);
+
   return (
     <div>
       <h1>Todos here</h1>
-      {todos.length > 0 && todos.map((el) => <div>{el["title"]}</div>)}
+      {isLoading && <p>Loading...</p>}
+      {/* {todos.length > 0 && todos.map((el) =>  <div>{el["title"]}</div>)} */}
+      {/* {todos.length > 0 && todos.map((el) => <Todo todo={el} key={el["id"]} />)} */}
+      {!isLoading &&
+        todos.length > 0 &&
+        todos.map((el) => <Todo todo={el} key={el["id"]} />)}
     </div>
   );
 }
