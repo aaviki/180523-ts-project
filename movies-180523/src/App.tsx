@@ -9,8 +9,8 @@ import { Todos } from "./todos/Todos";
 function App() {
   return (
     <div className="App">
-      <Movies />
-      {/* <Timer /> */}
+      {/* <Movies /> */}
+      <Timer />
       {/* <Counter /> */}
       {/* <Todos /> */}
     </div>
