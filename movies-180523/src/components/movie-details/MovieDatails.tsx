@@ -6,6 +6,7 @@ export function MovieDetails() {
   return (
     <>
       <p>Current movie's ID is: {papams.id}</p>
+      {/* <p>Current movie's ID is: {papams.title}</p> */}
     </>
   );
 }
