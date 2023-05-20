@@ -4,7 +4,7 @@ import "./App.css";
 import { Movies } from "./components/movies/Movies";
 import { Timer } from "./components/timer/Timer";
 import { Counter } from "./components/counter/Counter";
-import { Todos /* loadTodos */ } from "./todos/Todos";
+import { Todos, loadTodos } from "./todos/Todos";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./components/home/home";
 import { NotFound } from "./components/not-found/NotFound";
@@ -15,41 +15,18 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Root } from "./components/Root";
-import { Login } from "./components/login/Login";
-import { Register } from "./components/register/Register";
 
 function App() {
-  // const browserRouter = createBrowserRouter(
-  //   createRoutesFromElements(
-  //     <Route path="/" element={<Root />}>
-  //       <Route index element={<Home />} />
-  //       <Route path="/movies" element={<Movies />} />
-  //       <Route
-  //         path="/todos"
-  //         element={<Todos />}
-  //         loader={loadTodos}
-  //         errorElement={<p>Error mesage</p>}
-  //       />
-  //       <Route path="*" element={<NotFound />} />
-  //       <Route path="/login" element={<Login />} />
-  //     </Route>
-  //   )
-  // );
-
-  const browserRouter = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root />,
-      children: [
-        { index: true, element: <Home /> },
-        { path: "/movies", element: <Movies /> },
-        { path: "/todos", element: <Todos /> },
-        { path: "/login", element: <Login /> },
-        { path: "/register", element: <Register /> },
-        { path: "*", element: <NotFound /> },
-      ],
-    },
-  ]);
+  const browserRouter = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route index element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/todos" element={<Todos />} loader={loadTodos} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    )
+  );
 
   return (
     <div className="App">

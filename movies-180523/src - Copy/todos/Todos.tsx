@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Todo } from "../todo/Todo";
 import { todosService } from "../services/todo";
+import { useLoaderData } from "react-router-dom";
 
 export function Todos() {
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const todos = useLoaderData();
   // useEffect(() => {
   //   fetch("https://jsonplaceholder.typicode.com/todos")
   //     .then((response) => response.json())
@@ -36,3 +38,7 @@ export function Todos() {
     </div>
   );
 }
+
+export const loadTodos = () => {
+  return todosService.getAllTodos();
+};
