@@ -7,7 +7,7 @@ export function Movie(props: any) {
   const [test, setTest] = useState("");
   const [marked, setMarked] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   // useEffect(() => {
   //   console.log("whenever");
@@ -31,7 +31,9 @@ export function Movie(props: any) {
     setIsDeleted(true);
   };
 
-  const goToDetails;
+  const goToDetails = () => {
+    navigate(`/movies/${id}`);
+  };
 
   return (
     <div>

@@ -1,3 +1,11 @@
+import { useParams } from "react-router-dom";
+
 export function MovieDetails() {
-  return <h1>Movie details here</h1>;
+  const papams = useParams();
+
+  return (
+    <>
+      <p>Current movie's ID is: {papams.id}</p>
+    </>
+  );
 }
