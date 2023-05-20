@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { moviesData } from "../../data/moviesData";
-import { Movie as MovieItem } from "../movie/movie";
+import { Movie as MovieItem } from "../movie/Movie";
 import { Movie as MovieInterface } from "../../inrefaces/movie";
 
 export function Movies() {

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Movie(props: any) {
-  const { title, year, genre, plot, poster } = props.movie;
+  const { id, title, year, genre, plot, poster } = props.movie;
 
   const [test, setTest] = useState("");
   const [marked, setMarked] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
+  const navigate = useNavigate;
 
   // useEffect(() => {
   //   console.log("whenever");
@@ -28,6 +30,9 @@ export function Movie(props: any) {
   const markMovieAsDeleted = () => {
     setIsDeleted(true);
   };
+
+  const goToDetails;
+
   return (
     <div>
       {!isDeleted && (
@@ -43,6 +48,7 @@ export function Movie(props: any) {
           <p>{plot}</p>
           <img src={poster} alt="poster" />
           <button onClick={markMovieAsDeleted}>Mark as Deleted</button>
+          <button onClick={goToDetails}>Show details</button>
         </div>
       )}
     </div>
