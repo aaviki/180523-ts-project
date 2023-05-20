@@ -6,6 +6,7 @@ import { todosService } from "../services/todo";
 interface TodoProps {
   todo: TodoInetrface;
 }
+//ejtaka
 
 export function Todo(props: TodoProps) {
   console.log(props);
