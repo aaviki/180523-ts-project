@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="App">
       {/* <Movies /> */}
-      <Timer />
+      {/* <Timer /> */}
       {/* <Counter /> */}
-      {/* <Todos /> */}
+      <Todos />
     </div>
   );
 }
