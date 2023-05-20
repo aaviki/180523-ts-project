@@ -32,7 +32,7 @@ export function Movie(props: any) {
   };
 
   const goToDetails = () => {
-    navigate(`/movies/${id}, title is: ${title}`);
+    navigate(`/movies/${id}, title is: " ${title} "`);
   };
 
   return (
