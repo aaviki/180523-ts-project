@@ -8,6 +8,7 @@ export function Navigation() {
       <Link to="/">Home</Link>
       <Link to="/movies">Movies</Link>
       <Link to="/todos">Todos</Link>
+      <Link to="/login">Login</Link>
 
       {/* <Link className={styles.navLinks} to="/">Home</Link> */}
       {/* <Link to="/">Home</Link>

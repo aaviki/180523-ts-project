@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Todo } from "../todo/Todo";
 import { todosService } from "../services/todo";
-import { useLoaderData, useRouteError } from "react-router-dom";
+import { useLoaderData, useRouteError, useLocation } from "react-router-dom";
 import { Todo as TodoInterface } from "../../src/inrefaces/todo";
 
 export function Todos() {
@@ -10,6 +10,8 @@ export function Todos() {
 
   // const todos = useLoaderData();
   const error = useRouteError();
+
+  const location = useLocation();
 
   // useEffect(() => {
   //   fetch("https://jsonplaceholder.typicode.com/todos")
@@ -39,7 +41,13 @@ export function Todos() {
         todos.length > 0 &&
         todos.map((el) => <Todo todo={el} key={el["id"]} />)} */}
 
-      {todos.length > 0 && todos.map((el) => <Todo todo={el} key={el["id"]} />)}
+      {location.state &&
+        location.state.map((el) => <Todo todo={el} key={el["id"]} />)}
+      {!location.state &&
+        todos.length > 0 &&
+        todos.map((el) => <Todo todo={el} key={el["id"]} />)}
+
+      {/* {todos.length > 0 && todos.map((el) => <Todo todo={el} key={el["id"]} />)} */}
       {error && <p>{error.message}</p>}
     </div>
   );
